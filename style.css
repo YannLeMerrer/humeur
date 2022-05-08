@@ -1,0 +1,49 @@
+
+
+caption
+{
+    margin-top: px;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+td, th 
+{
+    border: 1.5px solid black;
+}
+
+.container-principale {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+img {
+    max-height: 5rem;        
+}
+
+h1 {
+    margin-left: 12rem;
+    font-style: oblique;
+    margin-top: 2.5rem;
+}
+
+.plouf {
+    color: cyan;
+}
+
+.return {
+    color: #aaaaaa;
+}

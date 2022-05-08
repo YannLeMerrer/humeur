@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Humeurotron 3000©</title>
+    <style>
+    	* { padding: 0; margin: 0; }                                                                                                                                                                                                                             
+        canvas { background: #aaaaaa; display: block; margin: 0 auto; }
+        
+        .dark{
+            background-color: #444;
+        }
+
+        .licorn{
+            background-image:url("licorne.png");
+            background-repeat:no-repeat;
+            color: #FFF
+        }
+
+        .light{
+            background-color: #FFF;
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button name="DarkMode" type="button" onclick="setBackgroundDark()">
+        Dark Mode
+      </button>
+      <button name="LicornMode" type="button" onclick="setBackgroundLicorn()">
+        Licorn Mode
+      </button>
+      <button name="LightMode" type="button" onclick="setBackgroundLight()">
+        Light Mode
+      </button>
+    <h1>Cliquez sur la case grise en face de votre Prénom/Nom et choisissez votre humeur à l'aide des smiley.</h1>
+    <div class="container-principale">
+        <div class="container-images">
+            <img src="PasContentDuTout.png" onclick="add(20, 20, this)">
+            <img src="PasContent.png" onclick="add(20, 20, this)">
+            <img src="Bof.png" onclick="add(20, 20, this)">
+            <img src="Content.png" onclick="add(20, 20, this)">
+            <img src="TrèsContent.png" onclick="add(20, 20, this)">
+        </div>  
+            <table>
+                <caption>MoodBoard</caption>
+             
+                <thead> <!-- En-tête du tableau -->
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Mood</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- Corps du tableau -->
+                    <tr>
+
+                        <td>Rémi</td>
+                        <td><canvas id="myCanvas1" width="50" height="50" onclick="erase('myCanvas1')"></canvas></td>
+                    </tr>
+                    <tr>
+                        <td>Marc</td>
+                        <td><canvas id="myCanvas2" width="50" height="50" onclick="erase('myCanvas2')"></canvas></td>
+                    </tr>
+                    <tr>
+                        <td>Marc</td>
+                        <td><canvas id="myCanvas3" width="50" height="50" onclick="erase('myCanvas3')"></canvas></td>
+                    </tr>
+                    <tr>
+                        <td>Lucas</td>
+                        <td><canvas id="myCanvas4" width="50" height="50" onclick="erase('myCanvas4')"></canvas></td>
+                    </tr>
+                    <tr>
+                        <td>Gweltaz</td>
+                        <td><canvas id="myCanvas5" width="50" height="50" onclick="erase('myCanvas5')"></canvas></td>
+                    </tr>
+                    <tr>
+                        <td>Kevin</td>
+                        <td><canvas id="myCanvas6" width="50" height="50" onclick="erase('myCanvas6')"></canvas></td>
+                        <tr>
+                            <td>Morgane</td>
+                            <td><canvas id="myCanvas7" width="50" height="50" onclick="erase('myCanvas7')"></canvas></td>
+                        </tr>
+                        <tr>
+                            <td>Nicolas</td>
+                            <td><canvas id="myCanvas8" width="50" height="50" onclick="erase('myCanvas8')"></canvas></td>
+                        </tr>
+                        <tr>
+                            <td>Vincent</td>
+                            <td><canvas id="myCanvas9" width="50" height="50" onclick="erase('myCanvas9')"></canvas></td>
+                        </tr>
+                        <tr>
+                            <td>Jonathan</td>
+                            <td><canvas id="myCanvas10" width="50" height="50" onclick="erase('myCanvas10')"></canvas></td>
+                        </tr>
+                        <tr>
+                            <td>Meihidine</td>
+                            <td><canvas id="myCanvas11" width="50" height="50" onclick="erase('myCanvas11')"></canvas></td>
+                        </tr>
+                        <tr>
+                            <td>Mathieu</td>
+                            <td><canvas id="myCanvas12" width="50" height="50" onclick="erase('myCanvas12')"></canvas></td>
+                            <tr>
+                                <td>Simon</td>
+                                <td><canvas id="myCanvas13" width="50" height="50" onclick="erase('myCanvas13')"></canvas></td>
+                </tbody>
+            </table>
+            
+    </div>
+   
+<script>
+
+var canvas = null;
+var ctx = null
+var xOffset = 0
+var yOffset = 0
+var draw = 0
+var classCss = localStorage.getItem("classCss") || "light";
+        var elem = document.querySelector("body");
+        elem.className = classCss;
+
+function erase(canvasName)
+{
+    
+    canvas = document.getElementById(canvasName);
+    ctx = canvas.getContext("2d");
+    if (draw=1) {
+        var img = document.createElement("img");
+        img.src = "Subterfuge.png";
+        ctx.drawImage(img, 0, 0, 50, 50)
+        
+    } else {
+        console.log("test")
+    }
+}
+function add(xLength, yLength, img)
+{           
+    ctx.drawImage(img, 0, 0, 50, 50);
+    draw = 1
+
+    xOffset = xOffset + xLength
+    yOffset = yOffset + yLength
+
+}
+
+function setBackgroundDark()
+{
+    var elem = document.querySelector("body");
+    elem.className = "dark";
+    localStorage.setItem("classCss", elem.className);
+}
+
+function setBackgroundLicorn()
+{
+    var elem = document.querySelector("body");
+    elem.className = "licorn";
+    localStorage.setItem("classCss", elem.className);
+}
+
+function setBackgroundLight()
+{
+    var elem = document.querySelector("body");
+    elem.className = "light";
+    localStorage.setItem("classCss", elem.className);
+}
+</script>
+
+</body>
+</html>
