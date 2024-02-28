@@ -1,5 +1,6 @@
-# humeur
-Projet n°2 Stage de Troisième
+# Humeur
+
+J'ai réalisé ce projet dans le cadre de mon stage de troisième sous la direction de l'entreprise Wijin, le but étant de créer un tableau afin de permettre aux salariés de l'entreprise d'indiquer leur humeur de la journée, ce qui aide à la communication dans l'entreprise.
 
 [Démo](https://yannlemerrer.github.io/humeur/)
 
